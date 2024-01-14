@@ -1,7 +1,9 @@
 package com.kingCode.Project1.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +22,8 @@ public class Category implements Serializable{
 	private Integer id;
 	
 	private String name;
+	
+	private Set<Product> products = new HashSet<>();
 	
 	public Category() {
 		
