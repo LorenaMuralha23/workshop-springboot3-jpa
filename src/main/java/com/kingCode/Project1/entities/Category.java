@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tb_category")
@@ -23,6 +24,7 @@ public class Category implements Serializable{
 	
 	private String name;
 	
+	@Transient
 	private Set<Product> products = new HashSet<>();
 	
 	public Category() {

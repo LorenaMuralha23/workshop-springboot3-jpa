@@ -6,35 +6,45 @@ import java.util.Objects;
 import java.util.Set;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tb_product")
 public class Product implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
 	private String description;
-	private String imgUrl;
 	
 	private Double price;
 	
+	private String imgUrl;
+	
+	@Transient
 	private Set<Category> categories = new HashSet<>();
 	
 	public Product() {
 		
 	}
 
-	public Product(Integer id, String name, String description, String imgUrl, Double price) {
+	public Product(Integer id, String name, String description, Double price, String imgUrl) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.imgUrl = imgUrl;
 		this.price = price;
+		this.imgUrl = imgUrl;
 	}
+
+
 
 	public Integer getId() {
 		return id;
