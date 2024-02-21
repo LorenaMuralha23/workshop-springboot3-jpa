@@ -39,7 +39,16 @@ public class OrderItem {
 	public void setOrder(Order order) {
 		id.setOrder(order);
 	}
-
+	
+	
+	public Product getProduct() {
+		return id.getProduct();
+	}
+	
+	public void setProduct(Product product) {
+		id.setProduct(product);
+	}
+	
 	public Integer getQuantity() {
 		return quantity;
 	}
@@ -55,6 +64,7 @@ public class OrderItem {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
 
 	@Override
 	public int hashCode() {
